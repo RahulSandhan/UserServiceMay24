@@ -3,6 +3,8 @@ package org.example.userservicemay24.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 @Entity
 public class Token {
@@ -12,5 +14,6 @@ public class Token {
     private String value;
     @ManyToOne
     private User user;
-    private int expiresAt;
+    private Date expiresAt;
+    private boolean isActive; //by default its value will be true, when we want to delete it - we will set it to false
 }
